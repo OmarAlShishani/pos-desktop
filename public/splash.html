@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1b4d3e 0%, #2d8a62 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .loader-container {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+        .product-name {
+            color: white;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .loading-text {
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .copyright {
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 12px;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <svg class="logo" viewBox="0 0 24 24" fill="white">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <div class="product-name">Al-Musafer POS</div>
+        <div class="loading-spinner"></div>
+        <div class="loading-text">الرجاء الانتظار</div>
+        <div class="copyright">© 2024 Al-Musafer. All rights reserved.</div>
+    </div>
+</body>
+</html> 

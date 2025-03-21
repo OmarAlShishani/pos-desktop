@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+
+* {
+  direction: rtl !important;
+}
+
+body {
+  direction: rtl !important;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif !important;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@keyframes pulse-gentle {
+  0%,
+  100% {
+    background-color: rgb(240 253 244);
+  }
+  50% {
+    background-color: rgb(220 252 231);
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+/* Barcode scanner animation styles */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(51, 153, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(51, 153, 255, 0.1) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+/* Animation for the laser effect */
+@keyframes scanLine {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+  50.1% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scan-line {
+  animation: scanLine 2s linear infinite;
+}
+
+/* Add glowing effect for the scan badge */
+.glow-effect {
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(66, 153, 225, 0.5);
+  }
+  to {
+    box-shadow:
+      0 0 15px rgba(66, 153, 225, 0.8),
+      0 0 25px rgba(66, 153, 225, 0.6);
+  }
+}
+
+/* Success animation */
+@keyframes success-scale {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.success-animation {
+  animation: success-scale 0.5s ease-in-out;
+}
+
+/* Particle animation for barcode scanner success */
+@keyframes particleFade {
+  0% {
+    opacity: 0.7;
+    transform: scale(0) translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5) translate(var(--tx, 20px), var(--ty, 20px));
+  }
+}
+
+/* Make the animation more professional with cleaner transitions */
+.barcode-scanner-container {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add subtle shadow pulse for attention */
+.shadow-pulse {
+  animation: shadow-pulse-animation 2s infinite;
+}
+
+@keyframes shadow-pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0px rgba(59, 130, 246, 0);
+  }
+}
